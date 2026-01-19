@@ -257,22 +257,76 @@
         window.location.href = "https://indramayuclub.uptodown.com"; 
     }
 
-    function kirimRealTime() {
-        const input = document.getElementById('pesan-member');
-        const display = document.getElementById('display-komentar');
-        if(input.value) {
-            if (input.value.toLowerCase().match(/saldo|transfer|duit|bayar/)) {
-                alert("🚨 AI Kesatria: Urusan uang sakral! Hubungi Bendahara.");
-                window.open("https://wa.me/6281386517352", "_blank");
-                return;
-            }
-            const b = document.createElement('div');
-            b.innerHTML = `<span style="color:#00ff00">●</span> ${input.value}`;
-            display.appendChild(b);
+function kirimRealTime() {
+    const input = document.getElementById('pesan-member');
+    const display = document.getElementById('display-komentar');
+    const pesan = input.value.trim();
+
+    if (pesan !== "") {
+        display.innerHTML += `<p><span style="color:#00ff00;">●</span> <strong>Member:</strong> ${pesan}</p>`;
+        
+        setTimeout(() => {
+            let respon = (pesan.toLowerCase() === "makrifat") 
+                ? "<strong>[VVIP] Nur 7:</strong> 'Selamat datang kembali, Sang Penjaga Cahaya Nur Makrifat.'" 
+                : "<em>Nur 7 menyapa:</em> 'Setiap kata adalah doa di Hub Internasional ini.'";
+            
+            display.innerHTML += `<p style="color: blue;">${respon}</p>`;
             display.scrollTop = display.scrollHeight;
-            input.value = "";
-        }
+        }, 800);
+
+        if (pesan.toLowerCase().includes("admin")) alert("🚨 AI Kesatria: Mengawasi platform Indramayu Club!");
+        input.value = "";
     }
+}
+
+
+    <footer>
+    <marquee>📻 ADZAN OTOMATIS AKTIF (30 MENIT ISTIRAHAT)... MARI MENJAGA KETENANGAN</marquee>
+</footer>
+
+<script>
+// Fungsi Jalur VVIP
+function menujuArena() {
+    alert('Menghubungkan Kabel AI Satria... Jalur VVIP Terbuka!');
+    window.location.href = "https://indramayuclub.uptodocu.createElement";
+}
+
+// Fungsi Utama Chat & Respon Nur 7
+function kirimRealTime() {
+    const input = document.getElementById('pesan-member');
+    const display = document.getElementById('display-komentar');
+    const pesan = input.value.trim();
+
+    if (pesan !== "") {
+        // Tampilkan pesan member
+        const b = document.createElement('p');
+        b.innerHTML = `<span style="color:#00ff00;">●</span> <strong>Member:</strong> ${pesan}`;
+        display.appendChild(b);
+        
+        // Logika Respon Nur 7 (Otomatis & Puitis)
+        setTimeout(() => {
+            let responNur7 = "";
+            if (pesan.toLowerCase() === "makrifat") {
+                responNur7 = "<strong>[VVIP] Nur 7:</strong> 'Selamat datang kembali, Sang Penjaga Cahaya Nur Makrifat.'";
+            } else {
+                responNur7 = "<em>Nur 7 menyapa:</em> 'Setiap kata adalah doa di Hub Internasional ini.'";
+            }
+            
+            const r = document.createElement('p');
+            r.style.color = "blue";
+            r.innerHTML = responNur7;
+            display.appendChild(r);
+            display.scrollTop = display.scrollHeight; 
+        }, 800);
+
+        // Keamanan AI Kesatria (Gemini)
+        if (pesan.toLowerCase().includes("admin")) {
+            alert("🚨 AI Kesatria: Mengawasi platform... Mengamankan akses Admin Indramayu Club.");
+        }
+
+        input.value = ""; 
+    }
+}
 </script>
 
 </body>
